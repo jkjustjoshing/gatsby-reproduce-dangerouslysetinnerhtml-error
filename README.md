@@ -1,3 +1,16 @@
+# Bug reproduction
+This repo reproduces a bug with `dangerouslySetInnerHTML` and GatsbyJS
+
+## Reproduction steps
+1. Clone the repo and run `npm install`
+2. Run `npm build`
+3. Start a web server in the `./public` folder (I do this with `python -m SimpleHTTPServer 3002`)
+4. Navigate to the home page (in my case, http://localhost:3002). <span style="color: red; font-weight: bold"> Note that the `<ul>` content isn't displayed as it exists in [index.js](./src/pages/index.js)</span>
+6. Navigate to page2 using the in-page link, and then navigate back to the hame page using the in-page link. <span style="color: red; font-weight: bold">Note that the `<ul>` content now does appear</span>
+7. Disable Javascript in the browser and reload the home page. <span style="color: green; font-weight: bold">Note that the `<ul>` content *DOES* appear in this case.</span> This means that the content is being removed by the Javascript that hydrates the React application.
+
+
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
