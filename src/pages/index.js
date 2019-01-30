@@ -13,6 +13,17 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
     </div>
     <Link to="/page-2/">Go to page 2</Link>
+    <p dangerouslySetInnerHTML={{ __html: `
+
+      <p>This is an attempt to reproduce an error</p>
+      <p>There should be a list under here</p>
+      <ul>
+      <li><p><strong>Item 1</strong>: Hello there</p></li>
+      <li><p><strong>Item 2</strong>: Hello there</p></li>
+      <li><p><strong>Item 3</strong>: Hello there</p></li>
+      </ul>
+
+    ` }} />
   </Layout>
 )
 
